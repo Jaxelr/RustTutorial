@@ -5,7 +5,7 @@ fn main() {
 
     //Scalar
     let val1: u8 = 16;
-    let val1: i8 = -16;
+    let _val1: i8 = -16;
 
     //These size integers reach until size 128 on 
     
@@ -22,24 +22,22 @@ fn main() {
 
     //Arithmetic operators
     //addition
-    let sum = 5 + 10;
+    let _sum = 5 + 10;
     // subtraction
-    let difference = 95.5 - 4.3;
+    let _difference = 95.5 - 4.3;
     // multiplication
-    let product = 4 * 30;
+    let _product = 4 * 30;
     // division
-    let quotient = 56.7 / 32.2;
+    let _quotient = 56.7 / 32.2;
     // remainder
-    let remainder = 43 % 5;
+    let _remainder = 43 % 5;
 
     //Boolean types
-    let t = true;
-    let f: bool = false; // with explicit type annotation
+    let _t = true;
+    let _f: bool = false; // with explicit type annotation
 
     //Character Type
-    let c = 'z';
-    let z = 'ℤ';
-    let heart_eyed_cat = '😻';
-
-
-}
+    let _c = 'z';
+    let _z = 'ℤ';
+    let _heart_eyed_cat = '😻';
+}   
