@@ -1,5 +1,5 @@
 [package]
-name = "Data_Types"
+name = "data_types"
 version = "0.1.0"
 authors = ["Jaxel Rojas <jaxelr@gmail.com>"]
 edition = "2018"
