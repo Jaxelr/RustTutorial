@@ -9,7 +9,7 @@ fn main() {
     let s1 = String::from("hello");
     let _s2 = s1;
 
-    //Uncommen to create an error on unusability
+    //Uncomment to create an error on unusability
     //println!("{}, world!", s1);
 
     //Using clone this works correctly
