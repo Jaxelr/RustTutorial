@@ -11,7 +11,9 @@ fn main() {
 
     println!("m = {:?}", m);
 
-    //We  must use Atomic referenced counted type in order to share between states.
+    // We must use Atomic referenced counted type in order to share between states.
+    // Atomic: Atomic types provide primitive shared-memory communication between threads, 
+    // and are the building blocks of other concurrent types.
     let counter = Arc::new(Mutex::new(0));
     let mut handles = vec![];
 
