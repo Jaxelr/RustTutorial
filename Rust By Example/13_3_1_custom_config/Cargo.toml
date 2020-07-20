@@ -1,0 +1,12 @@
+[package]
+name = "custom_config"
+version = "0.1.0"
+authors = ["Jaxel Rojas <jaxelr@gmail.com>"]
+edition = "2018"
+
+[build]
+rustflags = ["some_condition"]    
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
