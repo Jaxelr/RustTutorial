@@ -1,5 +1,4 @@
-use std::fmt::Display;
-use std::fmt::Debug;
+use std::fmt::{Display, Debug};
 
 #[derive(Debug)]
 struct Rectangle { length: f64, height: f64 }
