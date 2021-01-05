@@ -1,3 +1,3 @@
-# Rust by example code snippets
+# Rustonomicon code snippets
 
 Tutorials from the book [The Rustonomicon](https://doc.rust-lang.org/nomiconindex.html)
