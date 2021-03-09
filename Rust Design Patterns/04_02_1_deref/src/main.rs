@@ -20,6 +20,7 @@ impl Deref for Bar {
 }
 
 fn main() {
-    let b = Bar { f : Foo {} };
+    let b = Bar { f : Foo {}, };
+
     b.m();
 }
