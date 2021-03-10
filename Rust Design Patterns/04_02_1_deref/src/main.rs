@@ -3,13 +3,11 @@ use std::ops::Deref;
 struct Foo {}
 
 impl Foo {
-    fn m(&self) {
-    }
-
+    fn m(&self) {}
 }
 
 struct Bar {
-    f: Foo
+    f: Foo,
 }
 
 impl Deref for Bar {
@@ -20,7 +18,7 @@ impl Deref for Bar {
 }
 
 fn main() {
-    let b = Bar { f : Foo {}, };
+    let b = Bar { f: Foo {} };
 
     b.m();
 }
