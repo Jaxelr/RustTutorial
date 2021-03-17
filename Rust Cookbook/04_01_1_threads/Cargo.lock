@@ -141,4 +141,5 @@ version = "0.1.0"
 dependencies = [
  "crossbeam",
  "crossbeam-channel 0.4.4",
+ "lazy_static",
 ]

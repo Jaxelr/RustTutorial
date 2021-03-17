@@ -6,8 +6,20 @@ use std::time::Duration;
 use crossbeam_channel::bounded;
 use crossbeam_channel::unbounded;
 
+use lazy_static::lazy_static;
+use std::sync::Mutex;
 
-fn main() {
+lazy_static! {
+    static ref FRUIT: Mutex<Vec<String>> = Mutex::new(Vec::new());
+}
+
+fn insert(fruit: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let mut db = FRUIT.lock().map_err(|_| "Failed to acquire MutexGuard")?;
+    db.push(fruit.to_string());
+    Ok(())
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let arr = &[1, 25, -4, 10];
     let max = find_max(arr);
     assert_eq!(max, Some(25));
@@ -15,6 +27,23 @@ fn main() {
     parallel_pipeline();
 
     data_between_threads();
+
+    insert_fruit()?;
+
+    Ok(())
+}
+
+fn insert_fruit() -> Result<(), Box<dyn std::error::Error>> {
+    insert("apple")?;
+    insert("orange")?;
+    insert("peach")?;
+    {
+        let db = FRUIT.lock().map_err(|_| "Failed to acquire MutexGuard")?;
+
+        db.iter().enumerate().for_each(|(i, item)| println!("{}: {}", i, item));
+    }
+    insert("grape")?;
+    Ok(())
 }
 
 fn find_max(arr: &[i32]) -> Option<i32> {
@@ -98,3 +127,5 @@ fn data_between_threads() -> () {
         println!("Received {}", msg);
     }
 }
+
+
