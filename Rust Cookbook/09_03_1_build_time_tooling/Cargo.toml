@@ -1,0 +1,13 @@
+[package]
+name = "build_time_tooling"
+version = "0.1.0"
+authors = ["Jaxel Rojas <jaxelr@gmail.com>"]
+edition = "2018"
+build = "src/build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[build-dependencies]
+cc = "1"
+
+[dependencies]
+error-chain = "0.11"
