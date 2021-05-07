@@ -15,7 +15,7 @@ fn extract_login(input: &str) -> Option<&str> {
             [[:word:]]+$
             ").unwrap();
     }
-    RE.captures(input).and_then(|cap| {
+    RE.captures(input).and_then(|cap| { 
         cap.name("login").map(|login| login.as_str())
     })
 }
