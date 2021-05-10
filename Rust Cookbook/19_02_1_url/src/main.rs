@@ -3,6 +3,7 @@ use url::{Url, Position, Origin, Host, ParseError};
 fn main() -> Result<(), Box <dyn std::error::Error>> {
     parse_url_from_string()?;
     create_new_url()?;
+    extract_origin()?;
     remove_fragments()?;
 
     Ok(())
@@ -41,5 +42,22 @@ fn remove_fragments() -> Result<(), ParseError> {
     let parsed = Url::parse("https://github.com/rust-lang/rust/issues?labels=E-easy&state=open")?;
     let cleaned: &str = &parsed[..Position::AfterPath];
     println!("cleaned: {}", cleaned);
+    Ok(())
+}
+
+fn extract_origin() -> Result<(), ParseError> {
+    let s = "ftp://rust-lang.org/examples";
+
+    let url = Url::parse(s)?;
+
+    let expected_scheme = "ftp".to_owned();
+    let expected_host = Host::Domain("rust-lang.org".to_owned());
+    let expected_port = 21;
+    let expected = Origin::Tuple(expected_scheme, expected_host, expected_port);
+
+    let origin = url.origin();
+    assert_eq!(origin, expected);
+    println!("The origin is as expected!");
+
     Ok(())
 }
