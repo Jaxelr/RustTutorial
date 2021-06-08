@@ -1,7 +1,7 @@
 use structopt::StructOpt;
 
 
-#[derive(StructOpt)]
+#[derive(Debug, StructOpt)]
 #[allow(dead_code)]
 struct Cli {
     pattern: String,
@@ -13,4 +13,6 @@ struct Cli {
 #[allow(unused_variables)]
 fn main() {
     let args = Cli::from_args();
+
+    println!("{:?}", args);
 }
